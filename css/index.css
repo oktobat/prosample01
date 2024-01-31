@@ -49,9 +49,16 @@ body {
   width: 100%;
   z-index: 99; /* 박스겹침이 발생했을때 겹치는 순서를 제어함. 높은값이 위로 올라옴 */
 }
+#header .row {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: stretch; */
+}
 #header h1 {
-  float: left;
-  padding: 20px 0;
+  padding: 0px 0;
+  display: flex;
+  align-items: center;
 }
 #header h1 a {
   width: 250px;
@@ -65,11 +72,17 @@ body {
   display: none;
 }
 #header #nav {
-  float: right;
+  display: flex;
 }
 /* #header #nav .depth1 { background:pink } */
+#header #nav .depth1 {
+  display: flex;
+}
 #header #nav .depth1 > li {
-  float: left;
+  /* float: left; */
+  display: flex;
+  align-items: center;
+
   margin-left: 48px;
   color: #fff;
   font-family: "Noto Sans KR";
@@ -77,11 +90,7 @@ body {
   position: relative;
   border-top: 4px solid transparent;
 }
-#header #nav .depth1 > li > a {
-  display: block;
-  height: 86.3px;
-  line-height: 86.3px;
-}
+
 #header #nav .depth1 > li:hover {
   color: #45639d;
   border-top: 4px solid #45639d;
@@ -111,10 +120,10 @@ body {
 }
 
 /* 슬라이더 구역 */
-#section .slideOuter .slideInner {
+#section .slideOuter1 .slideInner {
   position: relative;
 }
-#section .slideOuter .slideInner button.slick-arrow {
+#section .slideOuter1 .slideInner button.slick-arrow {
   border: none;
   background: none;
   font-size: 50px;
@@ -123,24 +132,24 @@ body {
   top: 50%;
   cursor: pointer;
 }
-#section .slideOuter .slideInner button.slick-next {
+#section .slideOuter1 .slideInner button.slick-next {
   right: 50px;
 }
-#section .slideOuter .slideInner button.slick-prev {
+#section .slideOuter1 .slideInner button.slick-prev {
   left: 50px;
   z-index: 999;
 }
-#section .slideOuter .slideInner ul.slick-dots {
+#section .slideOuter1 .slideInner ul.slick-dots {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
   bottom: 50px;
 }
-#section .slideOuter .slideInner ul.slick-dots li {
+#section .slideOuter1 .slideInner ul.slick-dots li {
   display: inline-block;
   margin: 0 5px;
 }
-#section .slideOuter .slideInner ul.slick-dots li button {
+#section .slideOuter1 .slideInner ul.slick-dots li button {
   border: none;
   width: 20px;
   height: 20px;
@@ -150,17 +159,17 @@ body {
   background: #fff;
   transition: all 0.2s;
 }
-#section .slideOuter .slideInner ul.slick-dots li.slick-active button {
+#section .slideOuter1 .slideInner ul.slick-dots li.slick-active button {
   background: #f00;
   width: 50px;
   border-radius: 50px;
 }
 
 /* 슬라이더 자동재생멈춤 버튼 */
-#section .slideOuter {
+#section .slideOuter1 {
   position: relative;
 }
-#section .slideOuter .plapau {
+#section .slideOuter1 .plapau {
   position: absolute;
   bottom: 48px;
   left: 50%;
@@ -169,14 +178,14 @@ body {
   margin-left: 60px;
 }
 
-#section .slide {
+#section .slideOuter1 .slide {
   /* 자식이 부모를 기준으로 배치될때 부모한테 주는 속성 */
   position: relative;
 }
-#section .slide img {
+#section .slideOuter1 .slide img {
   width: 100%;
 }
-#section .slide .text {
+#section .slideOuter1 .slide .text {
   /* 자식박스를 부모박스 정중앙에 배치시키는 공식 */
   position: absolute;
   top: 50%;
@@ -187,15 +196,15 @@ body {
   color: #fff;
   text-align: center;
 }
-#section .slide .text h2 {
+#section .slideOuter1 .slide .text h2 {
   font-size: 5vw;
   opacity: 0;
   transform: translate3d(0, 100%, 0);
 }
-#section .slick-current.slick-active.slide .text h2 {
+#section .slideOuter1 .slick-current.slick-active.slide .text h2 {
   animation: fadeInUp 1s 1 both 0.3s;
 }
-#section .slide .text p {
+#section .slideOuter1 .slide .text p {
   font-size: 22px;
   margin: 30px 0 80px;
   opacity: 0;
@@ -203,10 +212,10 @@ body {
   /* 한글단어잘림 허용 안하는 속성 */
   word-break: keep-all;
 }
-#section .slick-current.slick-active.slide .text p {
+#section .slideOuter1 .slick-current.slick-active.slide .text p {
   animation: fadeInUp 1s 1 both 1.3s;
 }
-#section .slide .text a {
+#section .slideOuter1 .slide .text a {
   display: inline-block;
   font-size: 17px;
   color: #58aedd;
@@ -216,16 +225,18 @@ body {
   opacity: 0;
   transform: translate3d(0, 100%, 0);
 }
-#section .slick-current.slick-active.slide .text a {
+#section .slideOuter1 .slick-current.slick-active.slide .text a {
   animation: fadeInUp 1s 1 both 2.3s;
 }
 
 #section .business ul {
-  overflow: hidden;
+  /* overflow: hidden; */
+  display: flex;
 }
 #section .business ul li {
-  float: left;
-  width: 25%;
+  /* float: left; */
+  /* width: 25%; */
+  flex: 1;
   text-align: center;
   height: 600px;
   padding: 100px 30px;
@@ -268,11 +279,13 @@ body {
   padding: 100px 0;
 }
 #section .product .row {
-  overflow: hidden;
+  /* overflow: hidden; */
+  display: flex;
 }
 #section .product .text {
-  float: left;
-  width: 50%;
+  /* float: left;
+  width: 50%; */
+  flex: 1;
   color: #fff;
 }
 #section .product .text h2 {
@@ -296,8 +309,9 @@ body {
   color: #333;
 }
 #section .product .photo {
-  float: left;
-  width: 50%;
+  /* float: left;
+  width: 50%; */
+  flex: 1;
   text-align: center;
   padding-top: 70px;
 }
@@ -313,12 +327,16 @@ body {
   margin-bottom: 30px;
 }
 #section .customer .row div {
-  overflow: hidden;
+  /* overflow: hidden; */
+  display: flex;
 }
 #section .customer .row div span {
-  width: 33.33%;
-  float: left;
-  padding: 0 15px;
+  /* width: 33.33%;
+     float: left; 
+     padding: 0 15px;
+  */
+  flex: 1;
+  margin: 0 15px;
 }
 #section .customer .row div span img {
   border: 1px solid #ddd;

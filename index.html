@@ -49,7 +49,7 @@
   </head>
   <body>
     <div id="header">
-      <div class="row cf">
+      <div class="row">
         <h1>
           <a href="#">
             <span class="blind">company</span>
@@ -88,7 +88,7 @@
     </div>
 
     <div id="section">
-      <div class="slideOuter">
+      <div class="slideOuter1">
         <div class="slideInner">
           <div class="slide">
             <img src="./image/silde1.jpg" alt="" />
@@ -199,8 +199,82 @@
       </div>
     </div>
 
+    <style>
+      .davich {
+        display: flex;
+        padding: 30px 0;
+        color: #fff;
+        background: blue;
+      }
+      .davich > a {
+        flex: 1 1 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .davich > a > div {
+        padding: 40px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        transition: all 0.3s;
+      }
+      .davich > a:hover > div {
+        background: #fff;
+      }
+      .davich > a .quick-img {
+        width: 130px;
+        height: 130px;
+        background-repeat: no-repeat;
+        background-position: -15px 0;
+      }
+      .davich > a:nth-child(1) .quick-img {
+        background-image: url(https://img.davich.com/image/main/icon-quick-01.png);
+      }
+      .davich > a:nth-child(1):hover .quick-img {
+        background-position: -175px 0;
+      }
+      .davich > a:nth-child(2) .quick-img {
+        background-image: url(https://img.davich.com/image/main/icon-quick-02.png);
+      }
+      .davich > a:nth-child(2):hover .quick-img {
+        background-position: -175px 0;
+      }
+      .davich > a:nth-child(3) .quick-img {
+        background-image: url(https://img.davich.com/image/main/icon-quick-03.png);
+      }
+      .davich > a:nth-child(3):hover .quick-img {
+        background-position: -175px 0;
+      }
+      .davich > a:nth-child(4) .quick-img {
+        background-image: url(https://img.davich.com/image/main/icon-quick-04.png);
+      }
+      .davich > a:nth-child(4):hover .quick-img {
+        background-position: -175px 0;
+      }
+    </style>
+
+    <div class="davich">
+      <a href="#">
+        <div><div class="quick-img"></div></div>
+        <h3>매장찾기</h3>
+      </a>
+      <a href="#">
+        <div><div data-v-7f0124ae="" class="quick-img"></div></div>
+        <h3 data-v-7f0124ae="">경영이념</h3>
+      </a>
+      <a href="#">
+        <div><div data-v-7f0124ae="" class="quick-img"></div></div>
+        <h3 data-v-7f0124ae="">고객의 소리</h3>
+      </a>
+      <a href="#">
+        <div><div data-v-7f0124ae="" class="quick-img"></div></div>
+        <h3 data-v-7f0124ae="">상품권 구매</h3>
+      </a>
+    </div>
+
     <script>
-      $(".slideInner").slick({
+      $(".slideOuter1 .slideInner").slick({
         autoplaySpeed: 4000,
         speed: 300,
         autoplay: true,
@@ -212,7 +286,7 @@
           '<button class="slick-next slick-arrow" aria-label="Next" type="button"><i class="fa-solid fa-chevron-right"></i></button>',
       });
 
-      $(".slideOuter .plapau i").on("click", function () {
+      $(".slideOuter1 .plapau i").on("click", function () {
         if ($(this).hasClass("fa-pause")) {
           $(".slideInner").slick("slickPause");
           $(this).removeClass("fa-pause").addClass("fa-play");

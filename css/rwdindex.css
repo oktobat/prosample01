@@ -1,5 +1,8 @@
 @media screen and (max-width: 1289px) {
   .row {
+    max-width: 1289px;
+    border: 0px solid #fff;
+    margin: 0 auto;
     padding: 0 10px;
   }
 }
@@ -11,16 +14,20 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 99; /* 박스겹침이 발생했을때 겹치는 순서를 제어함. 높은값이 위로 올라옴 */
+    z-index: 99999; /* 박스겹침이 발생했을때 겹치는 순서를 제어함. 높은값이 위로 올라옴 */
   }
+
   #header .row {
-    padding: 0;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: stretch; */
+    flex-wrap: wrap;
+    padding: 20px 0 0;
   }
-  #header h1 {
-    float: left;
-    padding: 20px 0 20px 10px;
-  }
+
   #header h1 a {
+    margin: 0 0 20px 10px;
     width: 250px;
     height: 50px;
     display: block;
@@ -28,48 +35,44 @@
     background-repeat: no-repeat;
     background-size: contain;
   }
+
   #header .menuopen {
-    display: block;
-    float: right;
+    display: flex;
+    color: #000;
     font-size: 25px;
-    height: 90px;
-    line-height: 90px;
-    margin-right: 10px;
+    align-items: center;
+    margin: 0 10px 20px 0px;
   }
   #header #nav {
-    float: right;
+    /* display: block; */
+    display: block;
     width: 100%;
-    /* 자바스크립트 액션으로 표시/감춤 */
+  }
+
+  #header #nav .depth1 {
     display: block;
   }
-  /* #header #nav .depth1 { background:pink } */
   #header #nav .depth1 > li {
-    float: none;
+    /* float: left; */
+    display: block;
+    align-items: center;
+
     margin-left: 0px;
-    color: #4a4e57;
+    color: #333;
     font-family: "Noto Sans KR";
-    font-size: 12px;
+    font-size: 14px;
     position: relative;
-    border-top: 0px solid #4a4e57;
-    border: 0px solid #f00;
+    border-top: 0px solid transparent;
+  }
+  #header #nav .depth1 > li:hover {
+    color: #45639d;
+    border-top: 0px solid #45639d;
   }
   #header #nav .depth1 > li > a {
     display: block;
-    height: auto;
     line-height: 41px;
     border-top: 1px solid #d4d4d4;
     padding-left: 40px;
-  }
-  #header #nav .depth1 > li:hover {
-    color: #4a4e57;
-    border-top: 0px solid #4a4e57;
-  }
-  #header #nav .depth1 > li > a:hover {
-    background: #f9f9fb;
-  }
-
-  #header #nav .depth1 > li:hover .depth2 {
-    display: block;
   }
   #header #nav .depth2 {
     position: static;
@@ -87,9 +90,6 @@
     font-size: 12px;
     color: #212934;
     border-top: 1px solid #d4d4d4;
-  }
-  #header #nav .depth2 > li > a:hover {
-    background: #f9f9fb;
   }
 
   #section .slide img {
@@ -138,43 +138,23 @@
     margin-top: 20px;
   }
 
-  /* business 구역 */
-  #section .business ul li {
-    float: left;
-    width: 100%;
-    text-align: center;
-    height: 600px;
-    padding: 100px 30px;
+  #section .business ul {
+    /* overflow: hidden; */
+    display: block;
   }
 
-  /* product 구역 */
-  #section .product .text {
-    float: left;
-    width: 100%;
-    color: #fff;
-  }
-  #section .product .text h2 {
-    font-size: 50px;
-  }
-  #section .product .photo {
-    float: left;
-    width: 100%;
-    text-align: center;
-    padding-top: 70px;
+  #section .product .row {
+    /* overflow: hidden; */
+    display: block;
   }
 
-  /* customer 구역 */
-  #section .customer .row h2 {
-    font-size: 50px;
-    color: #333;
-    text-align: center;
-    margin-bottom: 30px;
+  #section .customer .row div {
+    display: block;
   }
   #section .customer .row div span {
-    width: 100%;
-    float: left;
-    padding: 0 15px;
+    display: block;
+    flex: 1;
+    margin: 15px;
     text-align: center;
-    margin: 10px 0;
   }
 }
