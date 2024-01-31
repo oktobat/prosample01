@@ -115,6 +115,22 @@
           <i class="fa-solid fa-pause"></i>
         </div>
       </div>
+      <div class="slideOuter2 row">
+        <div class="slideInner">
+          <div class="slide">
+            <img src="./image/silde1.jpg" alt="" />
+          </div>
+          <div class="slide">
+            <img src="./image/silde2.jpg" alt="" />
+          </div>
+          <div class="slide">
+            <img src="./image/silde1.jpg" alt="" />
+          </div>
+          <div class="slide">
+            <img src="./image/silde2.jpg" alt="" />
+          </div>
+        </div>
+      </div>
       <div class="business">
         <ul>
           <li>
@@ -294,6 +310,22 @@
           $(".slideInner").slick("slickPlay");
           $(this).removeClass("fa-play").addClass("fa-pause");
         }
+      });
+
+      $(".slideOuter2 .slideInner").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplaySpeed: 4000,
+        speed: 300,
+        autoplay: true,
+        dots: false,
+        centerMode: true,
+        centerPadding: "100px",
+        arrows: true,
+        prevArrow:
+          '<button class="slick-prev slick-arrow" aria-label="Previous" type="button"><i class="fa-solid fa-chevron-left"></i></button>',
+        nextArrow:
+          '<button class="slick-next slick-arrow" aria-label="Next" type="button"><i class="fa-solid fa-chevron-right"></i></button>',
       });
     </script>
   </body>

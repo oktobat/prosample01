@@ -229,6 +229,40 @@ body {
   animation: fadeInUp 1s 1 both 2.3s;
 }
 
+/* 두번째 슬라이드 */
+#section .slideOuter2 {
+  margin: 50px auto;
+  position: relative;
+}
+#section .slideOuter2 .slideInner .slick-slide {
+  opacity: 0.6;
+  transform: scale(0.85);
+  padding: 0 10px;
+}
+#section .slideOuter2 .slideInner .slick-slide.slick-active {
+  opacity: 1;
+}
+#section .slideOuter2 .slideInner .slick-slide.slick-center {
+  transform: scale(1);
+}
+
+#section .slideOuter2 .slideInner button.slick-arrow {
+  border: none;
+  background: none;
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+#section .slideOuter2 .slideInner button.slick-prev {
+  left: 20px;
+  z-index: 9999;
+}
+#section .slideOuter2 .slideInner button.slick-next {
+  right: 20px;
+}
 #section .business ul {
   /* overflow: hidden; */
   display: flex;
