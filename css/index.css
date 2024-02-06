@@ -104,10 +104,11 @@ body {
   color: #45639d;
   border-top: 4px solid #45639d;
 }
-
+/*
 #header #nav .depth1 > li.on .depth2 {
   display: block;
 }
+*/
 #header #nav .depth2 {
   position: absolute;
   top: 100%;

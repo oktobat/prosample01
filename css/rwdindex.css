@@ -44,8 +44,7 @@
     margin: 0 10px 20px 0px;
   }
   #header #nav {
-    /* display: block; */
-    display: block;
+    display: none;
     width: 100%;
   }
 
@@ -74,9 +73,9 @@
     border-top: 1px solid #d4d4d4;
     padding-left: 40px;
   }
-  #header #nav .depth1 > li.on .depth2 {
+  /* #header #nav .depth1 > li.on .depth2 {
     display: block;
-  }
+  } */
   #header #nav .depth2 {
     position: static;
     top: 100%;
