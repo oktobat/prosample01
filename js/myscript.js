@@ -1,9 +1,29 @@
-let ww = $(window).width();
-if (ww > 910) {
-  $("html").addClass("pc");
-} else {
-  $("html").addClass("mobile");
+function getWindowWidth() {
+  let ww = $(window).width();
+  if (ww > 910) {
+    $("html").addClass("pc").removeClass("mobile");
+    $("#header #nav").css({
+      display: "flex",
+      width: "auto",
+    });
+    $("#nav .depth1 > li").removeClass("on");
+    $("#nav .depth1 > li").find(".depth2").hide();
+  } else {
+    $("html").addClass("mobile").removeClass("pc");
+    $("#header .menuopen")
+      .find("i")
+      .removeClass("fa-times")
+      .addClass("fa-bars");
+    $("#header #nav").css({
+      display: "none",
+      width: "100%",
+    });
+  }
 }
+getWindowWidth();
+$(window).on("resize", function () {
+  getWindowWidth();
+});
 
 $(".slideOuter1 .slideInner").slick({
   autoplaySpeed: 4000,
@@ -86,10 +106,5 @@ $("#nav .depth1 > li").on("click", function () {
 
 $("#header .menuopen").on("click", function () {
   $(this).next().stop().slideToggle(200);
-  // if (!$(this).find("i").hasClass("fa-times")) {
-  //   $(this).find("i").removeClass("fa-bars").addClass("fa-times");
-  // } else {
-  //   $(this).find("i").removeClass("fa-times").addClass("fa-bars");
-  // }
   $(this).find("i").toggleClass("fa-bars fa-times");
 });
