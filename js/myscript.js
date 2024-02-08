@@ -106,5 +106,11 @@ $("#nav .depth1 > li").on("click", function () {
 
 $("#header .menuopen").on("click", function () {
   $(this).next().stop().slideToggle(200);
-  $(this).find("i").toggleClass("fa-bars fa-times");
+  if (!$(this).find("i").hasClass("fa-bars")) {
+    $("#header #nav .depth2").slideUp();
+    $("#nav .depth1 > li").removeClass("on");
+    $(this).find("i").addClass("fa-bars").removeClass("fa-times");
+  } else {
+    $(this).find("i").addClass("fa-times").removeClass("fa-bars");
+  }
 });
